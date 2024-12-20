@@ -1,0 +1,41 @@
+# The version is obsolete, it will be ignored, so its better to remove it  
+# version: '3.8'
+
+services:
+  webapp:
+    build: .
+    container_name: webapp
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=True
+      - DATABASE_HOST=db
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+    networks:
+      - app_network
+
+  db:
+    image: postgres:latest
+    container_name: postgres_db
+    environment:
+      - POSTGRES_USER=shahdin
+      - POSTGRES_DB=postgres3
+      - POSTGRES_PASSWORD=pftshahdinpostgres321
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge  # Define a custom network 'app_network' 
+                    #using the 'bridge' driver for inter-container communication.
+
+volumes:
+  postgres_data:
+    driver: local
