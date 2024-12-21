@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # custom installations
     'accounts',
+    'rest_framework',
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
@@ -54,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -136,3 +139,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Custom User Configurations
 AUTH_USER_MODEL = 'accounts.CustomUser'
+
+
+# Debug Toolbar Configuration
+INTERNAL_IPS = [
+    '127.0.0.1',  # For localhost
+]
