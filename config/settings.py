@@ -42,8 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # custom installations
+    # local installations
     'accounts',
+    'core',
     'rest_framework',
     'debug_toolbar',
 ]
