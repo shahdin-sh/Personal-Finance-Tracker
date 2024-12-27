@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import IncomeCategory, Income, PredefinedIncomeCategory
+from .models.income_models import IncomeCategory, Income, PredefinedIncomeCategory
+
 
 # Income Inclines and Admin Models
 class PredefinedIncomeCategoryAdmin(admin.ModelAdmin):

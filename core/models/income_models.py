@@ -1,8 +1,4 @@
-from datetime import timedelta
-from django.conf import settings
-from django.core.exceptions import ValidationError
-from django.db import models
-from django.utils.timezone import now
+from .imports import *
 
 
 class PredefinedIncomeCategory(models.Model):
@@ -108,7 +104,3 @@ class Income(models.Model):
        self._validate_currency_method()
        self._validate_ending_time_method()
        self._validate_user_association_with_source()
-    
-
-# class Expense(models.Model):
-#     pass 
